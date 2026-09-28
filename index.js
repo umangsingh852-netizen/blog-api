@@ -10,7 +10,9 @@ const postRoutes = require("./routes/postRoutes");
 const app = express();
 
 app.use(express.json());
-connectDB();
+connectDB()
+    .then(() => console.log("Database connected successfully"))
+    .catch((err) => console.log("Database connection failed:", err));
 
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
