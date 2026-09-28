@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const fs = require("fs");
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const connectDB = require("./views/connectons");
 const userRoutes = require("./routes/userRoutes");
 const { prototype } = require("events");
